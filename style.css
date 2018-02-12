@@ -3,13 +3,13 @@
 
 body {
     background-color: #93C572;
-    font-family: 'Oleo Script', cursive;
 }
 /* The reason I chose 'Green' for background-color :
 It is the most restful color for the human eye. */
 
 h1 {
     text-align: center;
+    font-family: 'Oleo Script', cursive;
 }
 
 .container {
@@ -18,6 +18,9 @@ h1 {
       display: grid;
       margin: 30px auto;
       background-color: white;
+      font-family: 'Ruluko', sans-serif;
+      justify-items: stretch;
+      /* align-items: start */
       grid-template-columns: 600px 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
       grid-template-areas: "question score"
@@ -28,24 +31,67 @@ h1 {
 
 .question {
       grid-area: question;
+      /* background-color: red; */
+      border: 10px solid #f7f7f7;
+      border-style: groove;
+      border-radius: 10px 40px 40px 10px;
+      padding: 10px;
+      margin: 10px;
 }
 
 .answer {
       grid-area: answer;
+      border: 10px solid #f7f7f7;
+      border-style: groove;
+      border-radius: 10px 40px 40px 10px;
+      padding: 10px;
+      margin: 10px;
 }
 
 .score {
       grid-area: score;
+      padding: 10px;
+      margin: auto;
+      display: inline-block;
+}
+
+.currentScore {
+      font-size: 50px;
+
+      background-color: #f7f7f7;
+      align-self: stretch;
+      /* How to streach background-color??? */
+      /* two lines of style codes above don't work */
 }
 
 .correct_button {
       grid-area: correct_button;
+      align-self: end;
+      margin: auto auto 30px auto;
 }
 
 .wrong_button {
       grid-area: wrong_button;
+      align-self: start;
+      margin: 10px auto auto auto;
 }
 
 .reset_button {
       grid-area: reset_button;
+      align-self: start;
+      margin: auto;
+}
+
+.button {
+      height: 50px;
+      width: 120px;
+      background-color: #ff003a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 18px;
+      /* margin: auto; */
+      cursor: pointer;
+      border-radius: 12px;
+      display: inline-block
 }
