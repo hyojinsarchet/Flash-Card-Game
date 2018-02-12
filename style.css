@@ -1,15 +1,19 @@
+/* Q: need to figure out how to align items? texts? at center?? */
+/* tried 'align-self' and 'text-align' but both didn't work. */
+
+
 @import url(http://fonts.googleapis.com/css?family=Ruluko);
 @import url(http://fonts.googleapis.com/css?family=Oleo+Script);
 
 body {
-    background-color: #93C572;
+    background-color: #b2cecf;
 }
-/* The reason I chose 'Green' for background-color :
-It is the most restful color for the human eye. */
 
 h1 {
     text-align: center;
     font-family: 'Oleo Script', cursive;
+    color: white;
+    letter-spacing: 3px;
 }
 
 .container {
@@ -22,17 +26,19 @@ h1 {
       justify-items: stretch;
       /* align-items: start */
       grid-template-columns: 600px 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-areas: "question score"
+                           "question score"
                            "question correct_button"
                            "answer wrong_button"
+                           "answer next_button"
                            "answer reset_button"
 }
 
 .question {
       grid-area: question;
       /* background-color: red; */
-      border: 10px solid #f7f7f7;
+      border: 10px solid #50d07d;
       border-style: groove;
       border-radius: 10px 40px 40px 10px;
       padding: 10px;
@@ -41,7 +47,7 @@ h1 {
 
 .answer {
       grid-area: answer;
-      border: 10px solid #f7f7f7;
+      border: 10px solid #50d07d;
       border-style: groove;
       border-radius: 10px 40px 40px 10px;
       padding: 10px;
@@ -57,12 +63,15 @@ h1 {
 
 .currentScore {
       font-size: 50px;
-
+      width: 150px;
+      height: 100px;
+      text-align: center;
+      /* need to figure out how to align items? texts? at center?? */
       background-color: #f7f7f7;
-      align-self: stretch;
-      /* How to streach background-color??? */
-      /* two lines of style codes above don't work */
+      align-self: center;
 }
+
+/* Also how can I arrange the contents */
 
 .correct_button {
       grid-area: correct_button;
@@ -76,6 +85,12 @@ h1 {
       margin: 10px auto auto auto;
 }
 
+.next_button {
+      grid-area: next_button;
+      align-self: end;
+      margin: auto;
+}
+
 .reset_button {
       grid-area: reset_button;
       align-self: start;
@@ -85,7 +100,7 @@ h1 {
 .button {
       height: 50px;
       width: 120px;
-      background-color: #ff003a;
+      background-color: #ED1C24;
       color: white;
       padding: 20px;
       text-align: center;
@@ -93,5 +108,16 @@ h1 {
       /* margin: auto; */
       cursor: pointer;
       border-radius: 12px;
-      display: inline-block
+      display: inline-block;
+      opacity: .6;
 }
+
+
+/* .buttonStyle {
+    when mouseover this style will appear!
+    opacity: .3;
+    transition: opacity 300ms linear;
+} */
+
+/* I wanna add this style to buttons later
+https://1stwebdesigner.com/free-code-snippets-css-buttons/ */
