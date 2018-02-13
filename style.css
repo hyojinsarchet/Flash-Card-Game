@@ -47,14 +47,11 @@ h1 {
 }
 
 .currentQuestion {
-      height: 100px
-      width: 400px
+      height: 100px;
+      width: 400px;
       font-size: 50px;
       padding: 25px;
       margin: 25px;
-
-      /* Need to figure out to expand the space and font size!!! */
-      /* font-size is not working. :( */
 }
 
 .answer {
@@ -68,13 +65,11 @@ h1 {
 }
 
 .currentAnswer {
-      height: 100px
-      width: 400px
-      font-size: 50px;
-      padding: 25px;
-      margin: 25px;
-
-      /* Need to figure out to expand the space and font size!!! */
+  height: 100px;
+  width: 400px;
+  font-size: 50px;
+  padding: 25px;
+  margin: 25px;
 }
 
 .score {

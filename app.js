@@ -43,19 +43,27 @@ var flashCards = [
 ]
 
 
+/*
+1. some variable to track .currentScore element (currentScoreEl or currentScoreNode)
+2. a different variable to track the number current score (how many they've gotten right)
+3. A. if answer is correct (click correct button), increment current score variable
+3. B. set innerText of currentScoreEl or currentScoreNode to current score
+*/
+
+
 var question = document.querySelector('.question')
 var currentQuestion = document.querySelector('.currentQuestion')
 var answer = document.querySelector('.answer')
 var currentAnswer = document.querySelector('.currentAnswer')
 var score = document.querySelector('.score')
-var currentScore = parseFloat(document.querySelector('.currentScore'))
+var currentScore = document.querySelector('.currentScore')
 var correct = document.querySelector('.correct_button')
 var wrong = document.querySelector('.wrong_button')
 var next = document.querySelector('.next_button')
 var reset = document.querySelector('.reset_button')
 
 currentScore = 0
-
+var currentScoreEl = 0
 
 // default set & also used for reset button
 window.onload = SetDefaultValue();
