@@ -41,8 +41,20 @@ h1 {
       border: 10px solid #50d07d;
       border-style: groove;
       border-radius: 10px 40px 40px 10px;
-      padding: 10px;
-      margin: 10px;
+      padding: 20px;
+      margin:  20px 20px 10px 20px;
+      display: inline-block;
+}
+
+.currentQuestion {
+      height: 100px
+      width: 400px
+      font-size: 50px;
+      padding: 25px;
+      margin: 25px;
+
+      /* Need to figure out to expand the space and font size!!! */
+      /* font-size is not working. :( */
 }
 
 .answer {
@@ -50,8 +62,19 @@ h1 {
       border: 10px solid #50d07d;
       border-style: groove;
       border-radius: 10px 40px 40px 10px;
-      padding: 10px;
-      margin: 10px;
+      padding: 20px;
+      margin: 10px 20px 20px 20px;
+      display: inline-block;
+}
+
+.currentAnswer {
+      height: 100px
+      width: 400px
+      font-size: 50px;
+      padding: 25px;
+      margin: 25px;
+
+      /* Need to figure out to expand the space and font size!!! */
 }
 
 .score {
@@ -61,7 +84,7 @@ h1 {
       display: inline-block;
 }
 
-.currentScore {
+.score .currentScore {
       font-size: 50px;
       width: 150px;
       height: 100px;
@@ -77,6 +100,7 @@ h1 {
       grid-area: correct_button;
       align-self: end;
       margin: auto auto 30px auto;
+
 }
 
 .wrong_button {
@@ -94,11 +118,11 @@ h1 {
 .reset_button {
       grid-area: reset_button;
       align-self: start;
-      margin: auto;
+      margin: 0 auto auto auto;
 }
 
 .button {
-      height: 50px;
+      height: 40px;
       width: 120px;
       background-color: #ED1C24;
       color: white;
@@ -110,6 +134,8 @@ h1 {
       border-radius: 12px;
       display: inline-block;
       opacity: .6;
+      /* align-content: center; */
+      /* not working?!!! */
 }
 
 

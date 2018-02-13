@@ -1,5 +1,5 @@
 ////////////////////////  Model   /////////////////////
-var flashcards = [
+var flashCards = [
       {
         question: "안녕하세요!",
         answer: "Hello! [An-nyeong-ha-se-yo]"
@@ -43,33 +43,76 @@ var flashcards = [
 ]
 
 
-//How to add the questions and answer??
-//using innerText?
+var question = document.querySelector('.question')
+var currentQuestion = document.querySelector('.currentQuestion')
+var answer = document.querySelector('.answer')
+var currentAnswer = document.querySelector('.currentAnswer')
+var score = document.querySelector('.score')
+var currentScore = parseFloat(document.querySelector('.currentScore').value)
+var correct = document.querySelector('.correct_button')
+var wrong = document.querySelector('.wrong_button')
+var next = document.querySelector('.next_button')
+var reset = document.querySelector('.reset_button')
+
+currentScore = 0
 
 
-// When I click 'correct_button'
+// default set?
+// So can be used for reset as well.
+window.onload = SetDefaultValue();
+function SetDefaultValue() {
+    currentQuestion.innerText = flashCards[0].question
+    currentAnswer.innerText = ''
+}
+
+
+// When 'next_button' is clicked
+// show next question + empty answer box
+// So far it works only once, doesn't empty
+next.addEventListener('click', () => {
+
+      for(i = 1; i <= flashCards.length; i++) {
+          return currentQuestion.innerText = flashCards[i].question
+          currentAnswer.innerText = ''
+      }
+})
+
+// When 'correct_button' is clicked
 // add currentScore ++1
 // and show Answer
+correct.addEventListener('click', () => {
+    // when score reaches 5 - > add message "You've reached today's goal!"
+
+      for(i = 0; i <= flashCards.length; i++) {
+          return currentAnswer.innerText = flashCards[i].answer
+          // return currentScore.innerText += 1
+          currentScore += 1
+          currentScore = currentScore.innerText
+      }
+})
 
 
-// When I click 'wrong_button'
+// When 'wrong_button' is clicked
 // just show answer
+// So far it works only once
+wrong.addEventListener('click', () => {
+
+    for(i = 0; i <= flashCards.length; i++) {
+        return currentAnswer.innerText = flashCards[i].answer
+    }
+})
 
 
-//score function
-// when 'correct_button' is clicked ++1
-// when score reaches 5 - > add message "You've reached today's goal!"
-// maybe using alert? or add color? flash sth? Think about brilliant Idea!
-
-
-// When I click 'next_button',
-// show next question + empty answer box
-
-
-// When I click 'reset_button' reset!
+// When 'reset_button' is clicked reset!
+reset.addEventListener('click', () => {
+    SetDefaultValue()
+})
 
 
 // Add addEventListener on Buttons!
 // button.addEventListener("mouseover", function () {
 //     body.classList.add('buttonStyle')
 // })
+
+// Learn about default value from this link
+// https://www.sitepoint.com/community/t/how-to-set-default-value/6914
