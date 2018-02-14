@@ -1,14 +1,17 @@
-@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+@import url('https://fonts.googleapis.com/css?family=Righteous|Roboto');
 
 body {
-    background-color: #b2cecf;
+    background-color: #2b2b2b;
 }
 
 h1 {
-    text-align: center;
-    font-family: 'Oleo Script', cursive;
+    font-family: 'Righteous', cursive;
     color: white;
-    letter-spacing: 3px;
+    font-weight: 900;
+    font-size: 3em;
+
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .container {
@@ -19,7 +22,6 @@ h1 {
       background-color: white;
       font-family: 'Roboto', sans-serif;
       justify-items: stretch;
-      /* align-items: start */
       grid-template-columns: 600px 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-areas: "question score"
@@ -32,11 +34,12 @@ h1 {
 
 .question {
       grid-area: question;
-      border: 10px solid #50d07d;
+      border: 10px solid #918b85;
+      opacity: 0.8;
       border-style: groove;
       border-radius: 10px 40px 40px 10px;
       padding: 20px;
-      margin:  20px 20px 10px 20px;
+      margin:  20px 20px 10px 50px;
       display: inline-block;
 }
 
@@ -50,11 +53,12 @@ h1 {
 
 .answer {
       grid-area: answer;
-      border: 10px solid #50d07d;
+      border: 10px solid #918b85;
+      opacity: 0.8;
       border-style: groove;
       border-radius: 10px 40px 40px 10px;
       padding: 20px;
-      margin: 10px 20px 20px 20px;
+      margin: 10px 20px 20px 50px;
       display: inline-block;
 }
 
@@ -95,91 +99,56 @@ h3 {
       grid-area: correct_button;
       align-self: end;
       margin: auto auto 0 auto;
-      background-color: #F2552C;
-      opacity: 0.5
+      background-color: #f94f4f;
+      opacity: 1;
 }
 
 .correct_button:hover {
-      opacity: 1;
+      opacity: 0.5;
 }
 
 .wrong_button {
       grid-area: wrong_button;
       align-self: start;
       margin: 25px auto auto auto;
-      background-color: #F2552C;
-      opacity: 0.5
+      background-color: #f94f4f;
+      opacity: 1;
 }
 
 .wrong_button:hover {
-      opacity: 1;
+      opacity: 0.5;
 }
 
 .next_button {
       grid-area: next_button;
       align-self: end;
       margin: auto auto 10px auto;
-      background-color: #888888;
-      opacity: 0.5
+      background-color: #00a071;
+      opacity: 1;
 }
 
 .next_button:hover {
-      opacity: 1;
+      opacity: 0.5;
 }
 
 .reset_button {
       grid-area: reset_button;
       align-self: start;
       margin: 10px auto auto auto;
-      background-color: #888888;
-      opacity: 0.5
+      background-color: #00a071;
+      opacity: 1;
 }
 
 .reset_button:hover {
-      opacity: 1;
+      opacity: 0.5;
 }
 
 .button {
       height: 40px;
-      width: 120px;
+      width: 150px;
       color: white;
       padding: auto;
       font-size: 18px;
       border-radius: 12px;
       display: inline-block;
-
-    /* align-self: center; */
-    /* text-align: center; */
-    /* Both above don't work. Trying to find out how to align button text at center */
 }
-
-
-
-
-
-
-
-
-/* input[type=button] {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-} */
-/* input[value="Correct"] {
-    padding-bottom: 10px;
-} */
-
-
-/* .buttonStyle {
-      height: 40px;
-      width: 120px;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 18px;
-      /* margin: auto; */
-      /* cursor: pointer;
-      border-radius: 12px;
-      display: inline-block;
-      opacity: .3;
-      transition: opacity 300ms linear;
-    } */

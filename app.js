@@ -83,6 +83,9 @@ var currentScore = 0
 var counter = 0
 
 
+
+//////////////////////// ViewModel ////////////////////////
+
 // default set & also used for reset button
 window.onload = SetDefaultValue();
 function SetDefaultValue() {
@@ -133,19 +136,6 @@ reset.addEventListener('click', () => {
 })
 
 
-
-
-
-// for(var i = 0; i < button.length; i++) {
-//     button[i].onmouseover = function() {
-//         this.setAttribute("class", "buttonStyle")
-//     }
-// }
-
-// Add addEventListener on Buttons!
-// button.addEventListener("mouseover", function () {
-//     body.classList.add('buttonStyle')
-// })
 
 // Learned about default value from this link below:
 // https://www.sitepoint.com/community/t/how-to-set-default-value/6914
