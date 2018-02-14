@@ -1,44 +1,44 @@
 ////////////////////////  Model   /////////////////////
 var flashCards = [
       {
-        question: "안녕!",
-        answer: "Hello! [An-nyeong]"
+        question: "Hello!",
+        answer: "안녕! [An-nyeong]"
       },
       {
-        question: "친구",
-        answer: "Friend [Chin-gu]"
+        question: "Friend",
+        answer: "친구 [Chin-gu]"
       },
       {
-        question: "대한민국",
-        answer: "South Korea [Dae-han-min-guk]"
+        question: "South Korea",
+        answer: "대한민국 [Dae-han-min-guk]"
       },
       {
-        question: "감사합니다.",
-        answer: "Thank you. [Gam-sa-hap-ni-da]"
+        question: "Thank you.",
+        answer: "감사합니다. [Gam-sa-hap-ni-da]"
       },
       {
-        question: "반갑습니다",
-        answer: "Nice to meet you. [Ban-gap-seup-ni-da]"
+        question: "Nice to meet you.",
+        answer: "반갑습니다. [Ban-gap-seup-ni-da]"
       },
       {
-        question: "소주",
-        answer: "Soju"
+        question: "Soju",
+        answer: "소주 [soju]"
       },
       {
-        question: "평창",
-        answer: "Pyongchang"
+        question: "Pyongchang",
+        answer: "평창 [Pyong-chang]"
       },
       {
-        question: "올림픽",
-        answer: "Olympc"
+        question: "Olympic",
+        answer: "올림픽 [Ol-lym-pic]"
       },
       {
-        question: "제너럴 어셈블리",
-        answer: "General Assembly"
+        question: "dog",
+        answer: "개 [gae]"
       },
       {
-        question: "맥주",
-        answer: "Beer [Maek-ju]"
+        question: "Beer",
+        answer: "맥주 [Maek-ju]"
       }
 ]
 
@@ -56,67 +56,51 @@ var reset = document.querySelector('.reset_button')
 var button = document.getElementsByClassName('button')
 
 var currentScore = 0
+var counter = 0
+
 
 // default set & also used for reset button
 window.onload = SetDefaultValue();
 function SetDefaultValue() {
     currentQuestion.innerText = flashCards[0].question
+    currentAnswer.innerText = flashCards[0].answer
     currentAnswer.innerText = ''
+    currentScore = 0
+    currentScoreEl.innerText = currentScore
 }
 
-/*
-1. some variable to track currentScore element (currentScoreEl or currentScoreNode)
-2. a different variable to track the number current score (how many they've gotten right)
-3. A. if answer is correct (click correct button), increment current score variable
-3. B. set innerText of currentScoreEl or currentScoreNode to current score
-*/
 
 // When 'correct_button' is clicked -> show Answer & add currentScore ++1
-// Q: But now it works only once and gets error & doesn't add score
-
-var counter = 0
-
 correct.addEventListener('click', () => {
 
     currentScore ++
     currentScoreEl.innerText = currentScore
 
     // When reached your goal you get alert message.
-    if(currentScore === 5) {
+    if(currentScore === 10) {
         alert("You've reached your goal today!")
     }
 
-    // for(var i = 0; i <= flashCards.length; i++) {
-    //     currentAnswer.innerText = flashCards[i].answer
-    // }
     counter ++
-    currentAnswer.innerText = flashCards[counter].answer
+    currentAnswer.innerText = flashCards[counter - 1].answer
 })
 
 
 // When 'wrong_button' is clicked -> just show answer
-// Q: But so far it works only once and stops
-// Q: When I remove 'return' it gives a random answer
 wrong.addEventListener('click', () => {
 
-    // for(var i = 0; i <= flashCards.length; i++) {
-    //     currentAnswer.innerText = flashCards[i].answer
-    // }
     counter ++
-    currentAnswer.innerText = flashCards[counter].answer
+    currentAnswer.innerText = flashCards[counter - 1].answer
 })
 
 
 // When 'next_button' is clicked -> show next question + empty answer box
 // Q: But now, it works only once and doesn't empty answer box
 next.addEventListener('click', () => {
-  counter++
 
-    // for(var i = 1; i <= flashCards.length; i++) {
-        counter ++
-        currentQuestion.innerText = flashCards[counter].question
-        currentAnswer.innerText = ''
-    // }
+    counter++
+    currentQuestion.innerText = flashCards[counter].question
+    currentAnswer.innerText = ''
 })
 
 
@@ -127,13 +111,11 @@ reset.addEventListener('click', () => {
 
 
 
-
 // for(var i = 0; i < button.length; i++) {
 //     button[i].onmouseover = function() {
 //         this.setAttribute("class", "buttonStyle")
 //     }
 // }
-
 
 // Add addEventListener on Buttons!
 // button.addEventListener("mouseover", function () {
