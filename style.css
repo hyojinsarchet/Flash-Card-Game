@@ -1,8 +1,3 @@
-/* Q: need to figure out how to align items? texts? at center?? */
-/* tried 'align-self' and 'text-align' but both didn't work. */
-
-
-@import url(http://fonts.googleapis.com/css?family=Ruluko);
 @import url(http://fonts.googleapis.com/css?family=Oleo+Script);
 
 body {
@@ -22,7 +17,7 @@ h1 {
       display: grid;
       margin: 30px auto;
       background-color: white;
-      font-family: 'Ruluko', sans-serif;
+      font-family: 'Roboto', sans-serif;
       justify-items: stretch;
       /* align-items: start */
       grid-template-columns: 600px 1fr;
@@ -66,7 +61,7 @@ h1 {
 .currentAnswer {
   height: 100px;
   width: 400px;
-  font-size: 50px;
+  font-size: 40px;
   padding: 25px;
   margin: 25px;
 }
@@ -80,7 +75,7 @@ h1 {
 
 h3 {
       text-align: center;
-      font-size: 1.5em;
+      /* font-size: 1.5em; */
 }
 
 .score .currentScore {
@@ -101,6 +96,11 @@ h3 {
       align-self: end;
       margin: auto auto 0 auto;
       background-color: #F2552C;
+      opacity: 0.5
+}
+
+.correct_button:hover {
+      opacity: 1;
 }
 
 .wrong_button {
@@ -108,6 +108,11 @@ h3 {
       align-self: start;
       margin: 25px auto auto auto;
       background-color: #F2552C;
+      opacity: 0.5
+}
+
+.wrong_button:hover {
+      opacity: 1;
 }
 
 .next_button {
@@ -115,6 +120,11 @@ h3 {
       align-self: end;
       margin: auto auto 10px auto;
       background-color: #888888;
+      opacity: 0.5
+}
+
+.next_button:hover {
+      opacity: 1;
 }
 
 .reset_button {
@@ -122,33 +132,44 @@ h3 {
       align-self: start;
       margin: 10px auto auto auto;
       background-color: #888888;
+      opacity: 0.5
+}
+
+.reset_button:hover {
+      opacity: 1;
 }
 
 .button {
       height: 40px;
       width: 120px;
       color: white;
-      padding: 20px;
+      padding: auto;
       font-size: 18px;
       border-radius: 12px;
       display: inline-block;
+
     /* align-self: center; */
     /* text-align: center; */
     /* Both above don't work. Trying to find out how to align button text at center */
 }
 
+
+
+
+
+
+
+
 /* input[type=button] {
     margin-bottom: 10px;
     padding-bottom: 10px;
 } */
-input[value="Correct"] {
+/* input[value="Correct"] {
     padding-bottom: 10px;
-}
+} */
 
 
-
-
-.buttonStyle {
+/* .buttonStyle {
       height: 40px;
       width: 120px;
       color: white;
@@ -156,12 +177,9 @@ input[value="Correct"] {
       text-align: center;
       font-size: 18px;
       /* margin: auto; */
-      cursor: pointer;
+      /* cursor: pointer;
       border-radius: 12px;
       display: inline-block;
       opacity: .3;
       transition: opacity 300ms linear;
-}
-
-/* I wanna add this style to buttons later
-https://1stwebdesigner.com/free-code-snippets-css-buttons/ */
+    } */

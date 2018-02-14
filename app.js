@@ -39,6 +39,30 @@ var flashCards = [
       {
         question: "Beer",
         answer: "맥주 [Maek-ju]"
+      },
+      {
+        question: "Party",
+        answer: "파티 [Pa-ti]"
+      },
+      {
+        question: "Coding",
+        answer: "코딩 [Co-ding]"
+      },
+      {
+        question: "Beer",
+        answer: "맥주 [Maek-ju]"
+      },
+      {
+        question: "Bag",
+        answer: "가방 [Ga-bang]"
+      },
+      {
+        question: "Paper",
+        answer: "종이 [Jong-i]"
+      },
+      {
+        question: "Pencil",
+        answer: "연필 [Yeon-pil]"
       }
 ]
 
@@ -76,8 +100,8 @@ correct.addEventListener('click', () => {
     currentScore ++
     currentScoreEl.innerText = currentScore
 
-    // When reached your goal you get alert message.
-    if(currentScore === 10) {
+    // When reached your goal you get the alert message.
+    if(currentScore === 5) {
         alert("You've reached your goal today!")
     }
 
@@ -95,10 +119,9 @@ wrong.addEventListener('click', () => {
 
 
 // When 'next_button' is clicked -> show next question + empty answer box
-// Q: But now, it works only once and doesn't empty answer box
 next.addEventListener('click', () => {
 
-    counter++
+    // counter++
     currentQuestion.innerText = flashCards[counter].question
     currentAnswer.innerText = ''
 })
@@ -108,6 +131,8 @@ next.addEventListener('click', () => {
 reset.addEventListener('click', () => {
     SetDefaultValue()
 })
+
+
 
 
 
@@ -122,5 +147,5 @@ reset.addEventListener('click', () => {
 //     body.classList.add('buttonStyle')
 // })
 
-// Learn about default value from this link below:
+// Learned about default value from this link below:
 // https://www.sitepoint.com/community/t/how-to-set-default-value/6914
