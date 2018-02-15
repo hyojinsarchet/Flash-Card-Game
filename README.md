@@ -14,7 +14,7 @@
 - If you click the 'Wrong' button, it will just show the answer.
 - If you want to move on to the next question, click 'Next' button.
 - If you want to start over, click 'Reset' button.
-- If you reach certain score, an alert with congratulations will pop up.
+- If you reach certain score, an image with congratulations will pop up.
 
 
 ### How to run

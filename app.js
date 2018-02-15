@@ -1,4 +1,6 @@
 ////////////////////////  Model   /////////////////////
+
+// flasgCards array contains 15 questions and answers.
 var flashCards = [
       {
         question: "Hello!",
@@ -67,6 +69,7 @@ var flashCards = [
 ]
 
 
+var container = document.querySelector('.container')
 var question = document.querySelector('.question')
 var currentQuestion = document.querySelector('.currentQuestion')
 var answer = document.querySelector('.answer')
@@ -78,6 +81,7 @@ var wrong = document.querySelector('.wrong_button')
 var next = document.querySelector('.next_button')
 var reset = document.querySelector('.reset_button')
 var button = document.getElementsByClassName('button')
+var clapping = document.querySelector('.clapping')
 
 var currentScore = 0
 var counter = 0
@@ -86,14 +90,14 @@ var counter = 0
 
 //////////////////////// ViewModel ////////////////////////
 
-// default set & also used for reset button
+// used for default set & reset button
 window.onload = SetDefaultValue();
 function SetDefaultValue() {
+
     counter = 0
 
     currentQuestion.innerText = flashCards[counter].question
     currentAnswer.innerText = flashCards[counter].answer
-    // tried [flashCards.length], [counter - 1]... nothing worked
 
     currentAnswer.innerText = ''
     currentScore = 0
@@ -107,9 +111,17 @@ correct.addEventListener('click', () => {
     currentScore ++
     currentScoreEl.innerText = currentScore
 
-    // When reached your goal you get the alert message.
-    if(currentScore === 10) {
-        alert("You've reached your goal today!")
+    // When reached your goal you get the cute image popup.
+    if(currentScore === 5) {
+        currentQuestion.innerHTML = ''
+        currentAnswer.innerHTML = ''
+        clapping.style.display = 'block'
+        container.appendChild(clapping)
+
+        // When the popup image is clicked it disappers.
+        clapping.onclick = function() {
+            clapping.style.display = "none"
+        }
     }
 
     counter ++
@@ -117,7 +129,7 @@ correct.addEventListener('click', () => {
 })
 
 
-// When 'wrong_button' is clicked -> just show answer
+// When 'wrong_button' is clicked -> just show answer.
 wrong.addEventListener('click', () => {
 
     counter ++
@@ -125,7 +137,7 @@ wrong.addEventListener('click', () => {
 })
 
 
-// When 'next_button' is clicked -> show next question + empty answer box
+// When 'next_button' is clicked -> show next question + empty answer box.
 next.addEventListener('click', () => {
 
     // counter++
@@ -141,5 +153,8 @@ reset.addEventListener('click', () => {
 
 
 
-// Learned about default value from this link below:
+// Learned about 'default value' from this link below:
 // https://www.sitepoint.com/community/t/how-to-set-default-value/6914
+
+// Learned about 'pop up' from this link below:
+// https://stackoverflow.com/questions/7332421/writing-a-javascript-function-to-open-an-image-in-csspop-up-with-a-close-butto
