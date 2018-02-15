@@ -89,8 +89,12 @@ var counter = 0
 // default set & also used for reset button
 window.onload = SetDefaultValue();
 function SetDefaultValue() {
-    currentQuestion.innerText = flashCards[0].question
-    currentAnswer.innerText = flashCards[0].answer
+    counter = 0
+
+    currentQuestion.innerText = flashCards[counter].question
+    currentAnswer.innerText = flashCards[counter].answer
+    // tried [flashCards.length], [counter - 1]... nothing worked
+
     currentAnswer.innerText = ''
     currentScore = 0
     currentScoreEl.innerText = currentScore
@@ -104,7 +108,7 @@ correct.addEventListener('click', () => {
     currentScoreEl.innerText = currentScore
 
     // When reached your goal you get the alert message.
-    if(currentScore === 5) {
+    if(currentScore === 10) {
         alert("You've reached your goal today!")
     }
 
