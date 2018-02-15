@@ -87,7 +87,6 @@ var currentScore = 0
 var counter = 0
 
 
-
 //////////////////////// ViewModel ////////////////////////
 
 // used for default set & reset button
@@ -105,11 +104,16 @@ function SetDefaultValue() {
 }
 
 
-// When 'correct_button' is clicked -> show Answer & add currentScore ++1
+// When 'correct_button' is clicked ->
 correct.addEventListener('click', () => {
 
+    // CurrentScore is added (+1).
     currentScore ++
     currentScoreEl.innerText = currentScore
+
+    // Answer shows up.
+    counter ++
+    currentAnswer.innerText = flashCards[counter - 1].answer
 
     // When reached your goal you get the cute image popup.
     if(currentScore === 5) {
@@ -124,16 +128,35 @@ correct.addEventListener('click', () => {
         }
     }
 
-    counter ++
-    currentAnswer.innerText = flashCards[counter - 1].answer
+    correct.disabled = true
+    wrong.disabled = true
+    // for(var i = 0; i < flashCards.length; i++) {
+    //     if(flashCards[i].question.length === flashCards[i].answer.length) {
+    //         wrong.disabled = true
+    //     }
+    //     else {
+    //         wrong.disabled = false
+    //     }
+    // }
 })
 
 
 // When 'wrong_button' is clicked -> just show answer.
 wrong.addEventListener('click', () => {
 
-    counter ++
     currentAnswer.innerText = flashCards[counter - 1].answer
+    counter ++
+
+    // for(var i = 0; i < flashCards.length; i++) {
+    //     if(flashCards[i].question.length === flashCards[i].answer.length) {
+    //         correct.disabled = true
+    //     }
+    //     else {
+    //         correct.disabled = false
+    //     }
+    // }
+    correct.disabled = true
+    wrong.disabled = true
 })
 
 
@@ -143,6 +166,9 @@ next.addEventListener('click', () => {
     // counter++
     currentQuestion.innerText = flashCards[counter].question
     currentAnswer.innerText = ''
+
+    correct.disabled = false
+    wrong.disabled = false
 })
 
 
