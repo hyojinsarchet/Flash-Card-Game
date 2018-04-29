@@ -28,3 +28,7 @@
 * Html
 * CSS
 * JavaScript
+
+### The main page look
+
+![main](./images/flash-card-game.png)
