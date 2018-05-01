@@ -148,6 +148,8 @@ next.addEventListener("click", () => {
 // When 'reset_button' is clicked it resets.
 reset.addEventListener("click", () => {
   SetDefaultValue();
+  correct.disabled = false;
+  wrong.disabled = false;
   // location.reload();
 });
 
