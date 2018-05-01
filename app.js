@@ -122,12 +122,17 @@ correct.addEventListener("click", () => {
       clapping.style.display = "none";
     };
   }
+  correct.disabled = true;
+  wrong.disabled = true;
 });
 
 // When 'wrong_button' is clicked -> just show answer.
 wrong.addEventListener("click", () => {
-  currentAnswer.innerText = flashCards[counter - 1].answer;
+  currentAnswer.innerText = flashCards[counter].answer;
   counter++;
+
+  correct.disabled = true;
+  wrong.disabled = true;
 });
 
 // When 'next_button' is clicked -> show next question + empty answer box.
@@ -135,11 +140,15 @@ next.addEventListener("click", () => {
   // counter++
   currentQuestion.innerText = flashCards[counter].question;
   currentAnswer.innerText = "";
+
+  correct.disabled = false;
+  wrong.disabled = false;
 });
 
 // When 'reset_button' is clicked it resets.
 reset.addEventListener("click", () => {
   SetDefaultValue();
+  // location.reload();
 });
 
 // Learned about 'default value' from this link below:
